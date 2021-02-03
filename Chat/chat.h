@@ -24,9 +24,12 @@ private slots:
     void disconnect();
 
 private:
+
+    int key;
     Ui::Chat *ui;
     QTcpSocket *socket;
 
+   /*QString password_encryption(QString data);*/
     QString data_encryption(QString data);
     QString data_decryption(QString data);
 };

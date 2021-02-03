@@ -5,6 +5,7 @@
 #include <QTcpSocket>
 #include <QDebug>
 
+
 class Servak : public QTcpServer
 {
     Q_OBJECT
@@ -19,8 +20,7 @@ protected:
     void incomingConnection(qintptr handle);
 
 private:
-    QString passwordDecryption(QString data);
-    QString dataDecryption(QString data);
+    /*QString passwordDecryption(QString data);*/
     QVector<QTcpSocket*> clients;
 };
 

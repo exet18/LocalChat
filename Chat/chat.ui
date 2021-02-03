@@ -112,6 +112,37 @@
        </item>
       </layout>
      </widget>
+     <widget class="QLineEdit" name="key_input">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>260</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>1</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>260</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Enter key 1-8</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="messages">
      <widget class="QTextEdit" name="text_messages">

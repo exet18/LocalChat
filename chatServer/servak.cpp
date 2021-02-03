@@ -39,7 +39,7 @@ void Servak::incomingConnection(qintptr handle)
     connect (client, &QTcpSocket::disconnected, this, &Servak::disconnected);
 }
 
-QString Servak::passwordDecryption(QString data)
+/*QString Servak::passwordDecryption(QString data)
 {
     for(int iter = 0; iter < data.length(); iter++){
             char sym = QString(data).at(iter).toLatin1();
@@ -47,29 +47,5 @@ QString Servak::passwordDecryption(QString data)
             data.replace(iter,1,sym);
         }
         return data;
-}
+}*/
 
-QString Servak::dataDecryption(QString data)
-{
-    for(int iter = 0; iter < data.length(); iter++){
-            char sym = QString(data).at(iter).toLatin1();
-            if(sym >= 'a' && sym <= 'z'){
-                if(sym-8 > 'z'){
-                    sym += 18;
-                }
-                else{
-                    sym -= 8;
-                }
-            }
-            else if(sym >= 'A' && sym <= 'Z'){
-                if(sym-8 > 'Z'){
-                    sym += 18;
-                }
-                else{
-                    sym -= 8;
-                }
-            }
-            data.replace(iter,1,sym);
-        }
-        return data;
-}
