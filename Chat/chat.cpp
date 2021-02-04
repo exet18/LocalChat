@@ -39,7 +39,7 @@ void Chat::connect_to_server()
     QString ip = ui->e_address->text();
     QString nickname = ui->e_nickname->text();
     key = ui->key_input->text().toInt();
-    if(key > 0 and key < 22)
+    if(key > 0 and key < 6)
     {
         //QString password = ui->password->text();
         int port = ui->sb_port->value();
@@ -94,31 +94,34 @@ void Chat::disconnect()
 
 QString Chat::data_encryption(QString data)
 {
-    /*for(int iter = 0; iter < data.length(); iter++){
-            char ch = QString(data).at(iter).toLatin1();
+    for(int iter = 0; iter < data.length(); iter++)
+    {
+    char ch = data.at(iter).toLatin1();
 
-            if(ch >= 'a' && ch <= 'z')
-            {
-                ch = ch + key;
+    if (ch >= 'a' && ch <= 'z')
+    {
+      ch = ch + key;
 
-                if(ch > 'z'){
-                    ch = ch - 'z' + 'a' - 1;
-                }
+      if (ch > 'z')
+      {
+        ch = ch - 'z' + 'a' - 1;
+      }
 
-                data.replace(iter,1,ch);
-            }
-            else if(ch >= 'A' && ch <= 'Z'){
-                ch = ch + key;
-
-                if(ch > 'Z'){
-                    ch = ch - 'Z' + 'A' - 1;
-                }
-
-                data.replace(iter,1,ch);
-            }
+      data[iter] = ch;
     }
-    */
-    for(int iter = 0; iter < data.length(); iter++){
+    else if (ch >= 'A' && ch <= 'Z')
+    {
+      ch = ch + key;
+
+      if (ch > 'Z')
+      {
+        ch = ch - 'Z' + 'A' - 1;
+      }
+
+      data[iter] = ch;
+    }
+  }
+    /*for(int iter = 0; iter < data.length(); iter++){
            char sym = QString(data).at(iter).toLatin1();
            if(sym >= 'a' && sym <= 'z'){
                if(sym+key > 'z'){
@@ -139,34 +142,38 @@ QString Chat::data_encryption(QString data)
            data.replace(iter,1,sym);
        }
        return data;
+       */
+    return data;
 }
 
 QString Chat::data_decryption(QString data)
 {
-    /*for(int iter = 0; iter < data.length(); iter++){
-            char ch = QString(data).at(iter).toLatin1();
-
-            if(ch >= 'a' && ch <= 'z'){
-                ch = ch - key;
-
-                if(ch < 'a'){
-                    ch = ch + 'z' - 'a' + 1;
-                }
-
-               data.replace(iter,1,ch);
-            }
-            else if(ch >= 'A' && ch <= 'Z'){
-                ch = ch - key;
-
-                if(ch < 'A'){
-                    ch = ch + 'Z' - 'A' + 1;
-                }
-
-                data.replace(iter,1,ch);
-            }
-        }
-        */
     for(int iter = 0; iter < data.length(); iter++){
+    char ch = data.at(iter).toLatin1();
+
+        if(ch >= 'a' && ch <= 'z'){
+            ch = ch - key;
+
+            if(ch < 'a')
+            {
+                ch = ch + 'z' - 'a' + 1;
+            }
+
+            data[iter] = ch;
+        }
+        else if(ch >= 'A' && ch <= 'Z')
+        {
+            ch = ch - key;
+
+            if(ch > 'a'){
+                ch = ch + 'Z' - 'A' + 1;
+            }
+
+            data[iter] = ch;
+        }
+    }
+
+    /*for(int iter = 0; iter < data.length(); iter++){
             char sym = QString(data).at(iter).toLatin1();
             if(sym >= 'a' && sym <= 'z'){
                 if(sym-key < 'a'){
@@ -187,5 +194,6 @@ QString Chat::data_decryption(QString data)
             data.replace(iter,1,sym);
         }
         return data;
-
+        */
+ return data;
 }
