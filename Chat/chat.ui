@@ -112,19 +112,6 @@
        </item>
       </layout>
      </widget>
-     <widget class="QLineEdit" name="key_input">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>260</y>
-        <width>101</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="maxLength">
-       <number>1</number>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
@@ -140,7 +127,30 @@
        </font>
       </property>
       <property name="text">
-       <string>Enter key 1-5</string>
+       <string>Enter key 1-26</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Quit">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>290</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Quit</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="key_input">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>260</y>
+        <width>71</width>
+        <height>22</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -194,7 +204,7 @@
        <string>Disconnect</string>
       </property>
      </widget>
-     <widget class="QListWidget" name="listWidget">
+     <widget class="QListWidget" name="userList">
       <property name="geometry">
        <rect>
         <x>520</x>

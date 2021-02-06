@@ -5,6 +5,8 @@
 #include <QTcpSocket>
 #include <QDebug>
 
+#include <datebase.h>
+
 
 class Servak : public QTcpServer
 {
@@ -15,13 +17,13 @@ public:
 private slots:
     void readyRead();
     void disconnected();
+    void authorization();
 
 protected:
     void incomingConnection(qintptr handle);
-
 private:
-    /*QString passwordDecryption(QString data);*/
     QVector<QTcpSocket*> clients;
+    dateBase *ex = new dateBase("Servak","test.sqlite");
 };
 
 #endif // SERVAK_H

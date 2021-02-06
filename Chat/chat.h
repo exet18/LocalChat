@@ -15,6 +15,7 @@ class Chat : public QMainWindow
 public:
     Chat(QWidget *parent = nullptr);
     ~Chat();
+    void closeWindow();
 
 private slots:
     void connect_to_server();
@@ -29,7 +30,8 @@ private:
     Ui::Chat *ui;
     QTcpSocket *socket;
 
-   /*QString password_encryption(QString data);*/
+
+    QString password_encryption(QString data);
     QString data_encryption(QString data);
     QString data_decryption(QString data);
 };
