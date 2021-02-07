@@ -13,12 +13,15 @@
   <property name="windowTitle">
    <string>Chat</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>90</y>
+      <x>130</x>
+      <y>120</y>
       <width>631</width>
       <height>351</height>
      </rect>
@@ -31,10 +34,21 @@
       <property name="geometry">
        <rect>
         <x>210</x>
-        <y>290</y>
-        <width>75</width>
-        <height>23</height>
+        <y>300</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:hover 
+{
+background-color: rgb(114,255,10);
+}
+
+QPushButton:pressed 
+{
+background-color: rgb(12,255,10);
+}</string>
       </property>
       <property name="text">
        <string>Connect</string>
@@ -46,7 +60,7 @@
         <x>210</x>
         <y>150</y>
         <width>194</width>
-        <height>110</height>
+        <height>119</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -56,6 +70,9 @@
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>Ip:</string>
              </property>
@@ -112,11 +129,24 @@
        </item>
       </layout>
      </widget>
+     <widget class="QLineEdit" name="key_input">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>270</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="maxLength">
+       <number>2</number>
+      </property>
+     </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
         <x>210</x>
-        <y>260</y>
+        <y>270</y>
         <width>71</width>
         <height>21</height>
        </rect>
@@ -133,24 +163,57 @@
      <widget class="QPushButton" name="Quit">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>290</y>
-        <width>75</width>
-        <height>23</height>
+        <x>320</x>
+        <y>300</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:hover 
+{
+background-color: rgb(255,49,12);
+}
+
+QPushButton:pressed 
+{
+background-color: rgb(255,9,12);
+}</string>
       </property>
       <property name="text">
        <string>Quit</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="key_input">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>260</y>
-        <width>71</width>
-        <height>22</height>
+        <x>290</x>
+        <y>270</y>
+        <width>21</width>
+        <height>21</height>
        </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../Dowload/w514h5121380476868key.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>451</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../Dowload/—Pngtree—oval comics with speech bubbles_4492754 (1) (2).png</pixmap>
       </property>
      </widget>
     </widget>
@@ -171,7 +234,7 @@
         <x>10</x>
         <y>250</y>
         <width>491</width>
-        <height>51</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="readOnly">
@@ -183,9 +246,20 @@
        <rect>
         <x>510</x>
         <y>250</y>
-        <width>91</width>
-        <height>21</height>
+        <width>121</width>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:hover 
+{
+background-color: rgb(114,255,10);
+}
+
+QPushButton:pressed 
+{
+background-color: rgb(12,255,10);
+}</string>
       </property>
       <property name="text">
        <string>Send</string>
@@ -195,21 +269,32 @@
       <property name="geometry">
        <rect>
         <x>510</x>
-        <y>280</y>
-        <width>91</width>
+        <y>290</y>
+        <width>121</width>
         <height>21</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton:hover 
+{
+background-color: rgb(255,49,12);
+}
+
+QPushButton:pressed 
+{
+background-color: rgb(255,9,12);
+}</string>
       </property>
       <property name="text">
        <string>Disconnect</string>
       </property>
      </widget>
-     <widget class="QListWidget" name="userList">
+     <widget class="QListWidget" name="listWidget">
       <property name="geometry">
        <rect>
         <x>520</x>
         <y>20</y>
-        <width>81</width>
+        <width>111</width>
         <height>211</height>
        </rect>
       </property>

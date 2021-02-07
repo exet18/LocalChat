@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QTcpSocket>
+#include <QVector>
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Chat; }
@@ -15,14 +17,15 @@ class Chat : public QMainWindow
 public:
     Chat(QWidget *parent = nullptr);
     ~Chat();
-    void closeWindow();
 
 private slots:
+    void fillVector(QString nickname);
     void connect_to_server();
     void connected_to_server();
     void send();
     void recieve();
     void disconnect();
+    void Quit();
 
 private:
 
@@ -30,7 +33,8 @@ private:
     Ui::Chat *ui;
     QTcpSocket *socket;
 
-
+    void listFill();
+    QVector<QString> users;
     QString password_encryption(QString data);
     QString data_encryption(QString data);
     QString data_decryption(QString data);
